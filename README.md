@@ -37,4 +37,15 @@ This project implements a real-time sign language translator that detects hand g
 2. Install dependencies: `pip install -r requirements.txt`
 3. Run the app: `python gui_app.py`
 
+## 👥 Authors
+- Anand Parayil
+- Ch. Sai Akshaya
+
+## 📄 License
+
+This project is licensed under the **Apache License 2.0**.  
+© 2025 Anand Parayil and Ch. Sai Akshaya
+
+See the [LICENSE](./LICENSE) file for more details.
+
 ---
