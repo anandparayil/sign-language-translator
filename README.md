@@ -38,8 +38,8 @@ This project implements a real-time sign language translator that detects hand g
 3. Run the app: `python gui_app.py`
 
 ## 👥 Authors
-- Anand Parayil
-- Ch. Sai Akshaya
+- [Anand Parayil](https://github.com/anandparayil)
+- [Ch. Sai Akshaya](https://github.com/AkshayaChaluvadi)
 
 ## 📄 License
 
