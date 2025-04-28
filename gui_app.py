@@ -8,6 +8,7 @@ import numpy as np
 import pyttsx3
 import threading
 import pandas as pd
+import time
 
 # --- Model & MediaPipe setup ---
 model = joblib.load("C:/Users/ANAND/sign_language_translator/models/gesture_classifier_normalized.pkl")
@@ -47,12 +48,15 @@ class SignTranslatorApp:
         self.sentence_display = ttk.Label(root, text="Sentence: ", font=("Arial", 14))
         self.sentence_display.pack()
 
+        self.speaking = False
+
         button_frame = ttk.Frame(root)
         button_frame.pack(pady=10)
 
         ttk.Button(button_frame, text="Clear", command=self.clear_sentence).grid(row=0, column=0, padx=10)
         ttk.Button(button_frame, text="Backspace", command=self.backspace).grid(row=0, column=1, padx=10)
-        ttk.Button(button_frame, text="Speak", command=self.speak_sentence).grid(row=0, column=2, padx=10)
+        ttk.Button(button_frame, text="Add Space", command=self.add_space).grid(row=0, column=2, padx=10)  # 👈 Added button
+        ttk.Button(button_frame, text="Speak", command=self.speak_sentence).grid(row=0, column=3, padx=10)
 
         self.cap = cv2.VideoCapture(0)
         self.last_prediction = ""
@@ -111,12 +115,19 @@ class SignTranslatorApp:
     def backspace(self):
         self.sentence = self.sentence[:-1]
 
+    def add_space(self):  
+        self.sentence += " "
+
     def speak_sentence(self):
-        threading.Thread(target=self._speak, daemon=True).start()
+        if not self.speaking:
+            threading.Thread(target=self._speak, daemon=True).start()
 
     def _speak(self):
+        self.speaking = True  
         engine.say(self.sentence)
         engine.runAndWait()
+        time.sleep(0.5) 
+        self.speaking = False 
 
 # --- Run the app ---
 if __name__ == "__main__":
