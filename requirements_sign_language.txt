@@ -1,0 +1,10 @@
+opencv-python==4.8.0.76
+mediapipe==0.10.9
+tensorflow==2.15.0
+numpy==1.23.5
+matplotlib==3.7.1
+scikit-learn
+pyttsx3
+Pillow
+tkinter
+joblib

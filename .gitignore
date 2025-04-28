@@ -1,0 +1,28 @@
+# Ignore the dataset folder (too large for GitHub)
+dataset/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore virtual environments
+venv/
+venv310/
+
+# Ignore model files if needed (optional — if models are too big, otherwise you can keep them)
+# models/
+
+# Ignore output images if needed (optional — if too many large files)
+# outputs/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore VSCode workspace settings (optional)
+.vscode/
